@@ -36,7 +36,7 @@ class LessFile {
         // file the less file into memory
         var fileContent = fs.readFileSync(this.fileNameAndPath).toString();
         // convert the less file to css string
-        less.render(fileContent, (e, css) => {
+        less.render(fileContent, { compress : true }, (e, css) => {
             // create a new file (or overwrite existing file) with css we have created
             fs.writeFile(this.fileNameWithoutExtention + '.css', css.css, (err) => {
                 console.log("created : " + this.fileNameWithoutExtention + '.css');
