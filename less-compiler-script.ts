@@ -61,7 +61,7 @@ class LessFile
 
 
         // convert the less file to css string
-        less.render(fileContent, (e:any, css:any) => 
+        less.render(fileContent, { compress : true }, (e:any, css:any) => 
         {
             
             // create a new file (or overwrite existing file) with css we have created
